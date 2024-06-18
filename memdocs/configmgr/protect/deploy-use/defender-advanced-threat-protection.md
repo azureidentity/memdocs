@@ -247,6 +247,8 @@ This process compromises of actions to update the existing onboarding policy, an
 1. **Exclude** this collection from the existing Microsoft Defender for Endpoint collection targeted with the onboarding payload.
 
 1. **Deploy** the **Group Policy** onboarding script to the test collection.
+   
+The instructions about using Group Policy method to update existing OnbardingInfo can be found from https://learn.microsoft.com/en-us/defender-endpoint/configure-endpoints-gp, and we can use OU to specify the scope of target devices during validation period. This step is **required** because updating payload in MECM MDE policy does not update existing onboarded devices to use the new streamlined connection (MECM ATPHandler does not support value update at this stage), only new devices will receive and apply the new OnboardingInfo from MECM.
 
 1. **Validate** the devices are utilizing the new onboarding payload.
 
